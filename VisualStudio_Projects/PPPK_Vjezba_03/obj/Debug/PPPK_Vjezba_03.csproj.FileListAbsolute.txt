@@ -10,3 +10,15 @@ E:\Prog\School_Projects\3_Godina\PPPK_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vje
 E:\Prog\School_Projects\3_Godina\PPPK_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.csproj.CoreCompileInputs.cache
 E:\Prog\School_Projects\3_Godina\PPPK_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.exe
 E:\Prog\School_Projects\3_Godina\PPPK_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.pdb
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\bin\Debug\PPPK_Vjezba_03.exe.config
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\bin\Debug\PPPK_Vjezba_03.exe
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\bin\Debug\PPPK_Vjezba_03.pdb
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.csproj.AssemblyReference.cache
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.csproj.SuggestedBindingRedirects.cache
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.Dal.LoginForm.resources
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.MainForm.resources
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.Properties.Resources.resources
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.csproj.GenerateResource.cache
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.csproj.CoreCompileInputs.cache
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.exe
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\VisualStudio_Projects\PPPK_Vjezba_03\obj\Debug\PPPK_Vjezba_03.pdb
