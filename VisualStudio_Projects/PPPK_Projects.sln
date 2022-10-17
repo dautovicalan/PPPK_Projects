@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPPK_Vjezba_03", "PPPK_Vjezba_03\PPPK_Vjezba_03.csproj", "{FA5A0CA7-BF0D-44EB-8530-F3CEDFF4D6D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPPK_Vjezba_05", "PPPK_Vjezba_05\PPPK_Vjezba_05.csproj", "{87E6B81A-B710-429A-BC9A-35F41B8B2D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FA5A0CA7-BF0D-44EB-8530-F3CEDFF4D6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA5A0CA7-BF0D-44EB-8530-F3CEDFF4D6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA5A0CA7-BF0D-44EB-8530-F3CEDFF4D6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E6B81A-B710-429A-BC9A-35F41B8B2D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E6B81A-B710-429A-BC9A-35F41B8B2D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E6B81A-B710-429A-BC9A-35F41B8B2D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E6B81A-B710-429A-BC9A-35F41B8B2D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
