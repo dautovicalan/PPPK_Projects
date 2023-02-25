@@ -1,0 +1,7 @@
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\csc.exe
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\System.Collections.Immutable.dll
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\System.IO.FileSystem.dll
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\System.Reflection.Metadata.dll
+E:\Prog\School_Projects\3_Godina\PPPK_Projects\CosmosDbOsoba\CosmosDbOsoba\bin\roslyn\System.Text.Encoding.CodePages.dll
