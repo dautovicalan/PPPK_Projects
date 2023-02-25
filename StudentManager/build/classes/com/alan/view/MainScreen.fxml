@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alan.controller.MainScreenController">
+   <children>
+      <BorderPane fx:id="mainPane" layoutX="-1.0" prefHeight="600.0" prefWidth="1200.0">
+         <left>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnStudent" mnemonicParsing="false" text="Student">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnProfesor" mnemonicParsing="false" text="Profesor">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnKolegij" mnemonicParsing="false" text="Kolegij">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

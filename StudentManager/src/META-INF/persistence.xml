@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="StudentManagerPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.alan.model.Student</class>
+    <class>com.alan.model.Kolegij</class>
+    <class>com.alan.model.Profesor</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://pppk-alan.database.windows.net:1433;databaseName=pppk_database"/>
+      <property name="javax.persistence.jdbc.user" value="alansa"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.password" value="volimpppk123!"/>
+      
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
