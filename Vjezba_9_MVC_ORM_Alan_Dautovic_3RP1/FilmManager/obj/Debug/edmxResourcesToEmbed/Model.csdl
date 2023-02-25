@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="Model.Movie" />
+    <EntitySet Name="MovieUploadedFiles" EntityType="Model.MovieUploadedFile" />
+    <AssociationSet Name="MovieMovieUploadedFile" Association="Model.MovieMovieUploadedFile">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="MovieUploadedFile" EntitySet="MovieUploadedFiles" />
+    </AssociationSet>
+    <EntitySet Name="Actors" EntityType="Model.Actor" />
+    <EntitySet Name="Directors" EntityType="Model.Director" />
+    <AssociationSet Name="MovieActor" Association="Model.MovieActor">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Actor" EntitySet="Actors" />
+    </AssociationSet>
+    <AssociationSet Name="DirectorMovie" Association="Model.DirectorMovie">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Director" EntitySet="Directors" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="IDMovie" />
+    </Key>
+    <Property Name="IDMovie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Genre" Type="String" Nullable="false" MaxLength="30" />
+    <Property Name="ReleaseDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="MovieUploadedFiles" Relationship="Model.MovieMovieUploadedFile" FromRole="Movie" ToRole="MovieUploadedFile" />
+    <NavigationProperty Name="Actors" Relationship="Model.MovieActor" FromRole="Movie" ToRole="Actor" />
+    <NavigationProperty Name="Director" Relationship="Model.DirectorMovie" FromRole="Movie" ToRole="Director" />
+    <Property Name="DirectorIDDirector" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovieUploadedFile">
+    <Key>
+      <PropertyRef Name="IDUploadedFile" />
+    </Key>
+    <Property Name="IDUploadedFile" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="ContentType" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Content" Type="Binary" Nullable="false" />
+    <NavigationProperty Name="Movie" Relationship="Model.MovieMovieUploadedFile" FromRole="MovieUploadedFile" ToRole="Movie" />
+    <Property Name="MovieIDMovie" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="MovieMovieUploadedFile">
+    <End Type="Model.Movie" Role="Movie" Multiplicity="1" />
+    <End Type="Model.MovieUploadedFile" Role="MovieUploadedFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="IDMovie" />
+      </Principal>
+      <Dependent Role="MovieUploadedFile">
+        <PropertyRef Name="MovieIDMovie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="IDActor" />
+    </Key>
+    <Property Name="IDActor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movies" Relationship="Model.MovieActor" FromRole="Actor" ToRole="Movie" />
+  </EntityType>
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="IDDirector" />
+    </Key>
+    <Property Name="IDDirector" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movies" Relationship="Model.DirectorMovie" FromRole="Director" ToRole="Movie" />
+  </EntityType>
+  <Association Name="MovieActor">
+    <End Type="Model.Movie" Role="Movie" Multiplicity="*" />
+    <End Type="Model.Actor" Role="Actor" Multiplicity="*" />
+  </Association>
+  <Association Name="DirectorMovie">
+    <End Type="Model.Movie" Role="Movie" Multiplicity="*" />
+    <End Type="Model.Director" Role="Director" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Director">
+        <PropertyRef Name="IDDirector" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="DirectorIDDirector" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

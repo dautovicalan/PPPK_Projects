@@ -1,0 +1,140 @@
+﻿@model FilmManager.Movie
+
+@{
+    ViewBag.Title = "Edit";
+    IEnumerable<Actor> actors = (IEnumerable<Actor>)ViewData["Actors"];
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm("Edit", "Movie", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Movie</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDMovie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IDMovie, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Duration, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+            @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DirectorIDDirector, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList(nameof(Movie.DirectorIDDirector), (IEnumerable<SelectListItem>)ViewData["Directors"], "Select director", new {@id = "directors"})
+            @Html.ValidationMessageFor(model => model.DirectorIDDirector, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @foreach (var uploadedFile in Model.MovieUploadedFiles)
+        {
+
+            <span class="control-label col-md-2">
+                <strong>@uploadedFile.Name</strong> <br />
+                @Ajax.ActionLink("Delete", "Delete", "File", new { id = uploadedFile.IDUploadedFile }, new AjaxOptions { HttpMethod = "Post" })
+            </span>
+            <div class="col-md-10">
+                <img src="~/File?=@uploadedFile.IDUploadedFile" alt="Picture" width="300" height="200" />
+            </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Selected Actors</label>
+        <div class="col-md-10">
+            @foreach (var actor in Model.Actors)
+            {
+                <label class="form-check-input" for="actor_@actor.IDActor">@actor.FirstName @actor.LastName</label>
+                <br />
+                @Ajax.ActionLink("Remove Actor", "RemoveActorFromMovie", "Movie", new { id = actor.IDActor, movieId = Model.IDMovie }, new AjaxOptions { HttpMethod = "Post" })
+                <br />
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Available Actors</label>
+        <div class="col-md-10">
+            @foreach (var actor in actors)
+            {
+                <label class="form-check-input" for="actor_@actor.IDActor">@actor.FirstName @actor.LastName</label>
+                <br />
+                @Ajax.ActionLink("Add Actor", "AddActorToMovie", "Movie", new { id = actor.IDActor, movieId = Model.IDMovie }, new AjaxOptions { HttpMethod = "Post" })
+                <br />
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Movie Picture", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" id="Picture" accept="image/*" multiple name="files" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        let directorId = @Model.DirectorIDDirector;
+        $("#directors").val(directorId)
+    </script>
+}
